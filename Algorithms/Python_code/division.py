@@ -6,6 +6,7 @@ def main():
 # Division using recursion
 # Input: Two n-bit integers x and y, where y >= 1
 # Output: Their quotient and remainder
+# Time complexity: O(n^2)
 def div(x, y):
     if x == 0: return (0, 0)
     q, r = div(math.floor(x/2), y)

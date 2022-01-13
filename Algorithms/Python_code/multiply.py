@@ -6,6 +6,7 @@ def main():
 # Binary multiplication using recursion
 # Input: Two n-bit integers x and y, where y >= 0
 # Output: Their product
+# Time Complexity: O(n^2)
 def mult(x, y):
     if y == 0: return 0
     z = mult(x, math.floor(y/2))
