@@ -3,7 +3,7 @@ import math
 def main():
     return mult(3, 2)
 
-# Binary multiplication
+# Binary multiplication using recursion
 # Input: Two n-bit integers x and y, where y >= 0
 # Output: Their product
 def mult(x, y):
