@@ -1,14 +1,27 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 void multiply(int fibMat[2][2], int multMat[2][2]);
 void power(int fibMat[2][2], int n);
 
+// Fibonacci as recursion
 int fib1(int n) {
-    
+    if(n == 0) return 0;
+    if(n == 1) return 1;
+    return fib1(n - 1) + fib1(n - 2);
 }
 
+// Fibonacci as a polynomial
 int fib2(int n) {
-
+    if(n == 0) return 0;
+    int* fList = malloc((n + 1)*sizeof(int));
+    fList[0] = 0;
+    fList[1] = 1;
+    int i;
+    for(i = 2; i <= n + 1; i++) {
+        fList[i] = fList[i - 1] + fList[i - 2];
+    }
+    return fList[n];
 }
 
 // Fibonacci in matrix form
@@ -41,6 +54,8 @@ void multiply(int fibMat[2][2], int multMat[2][2]) {
 }
 
 int main() {
-    printf("%d", fib3(8));
+    printf("By recursion: %d\n", fib1(8));
+    printf("By polynomial: %d\n", fib2(8));
+    printf("By matrices: %d", fib3(8));
     return 0;
 }
